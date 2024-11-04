@@ -174,10 +174,17 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 60%;
-    height: 60%;
+    width: 80%;
+    height: 80%;
     z-index: 1;
 }
+
+.about-pattern img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .about-pattern img {
     width: 60%;
     height: 60%;
@@ -235,6 +242,7 @@
     font-family: "La Belle Aurore", cursive;
     font-weight: 400;
     font-style: normal;
+    margin-bottom: 16px;
 }
 .author-inner__icons{
     display: flex;

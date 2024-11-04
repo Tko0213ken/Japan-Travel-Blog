@@ -246,6 +246,51 @@ body{
     top: 60%;
 }
 
+/* ボタン
+---------------------------------------------------------------------------*/
+.button a {
+    background: var(--accent-color-1);
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 160px;
+    padding: 16px 16px;
+    color: var(--base-color);
+    transition: 0.3s ease-in-out;
+    font-family: var(--title-font-family);
+    letter-spacing: 0.05em;
+    margin-top: 48px;
+}
+.button a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  right: 2rem;
+  font-size: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s;
+  width: 6px;
+  height: 6px;
+  border-top: solid 2px currentColor;
+  border-right: solid 2px currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+.button a:hover {
+  background: var(--base-color);
+  color:var(--accent-color-1);
+  border: 1px solid var(--accent-color-1); 
+}
+.button a:hover:after {
+  right: 1.4rem;
+}
+
+
+
 
 /* カード　タイプ1
 ---------------------------------------------------------------------------*/
@@ -282,7 +327,7 @@ body{
 }
 
 .card-type1__title {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     font-weight: bold;
     font-family: var(--title-font-family);
     color:var(--font-main-color);
