@@ -38,30 +38,30 @@
 }
 
 .swiper-slide__link {
-    display: block;
     position: relative;
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 .swiper-slide__link::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.25); 
-    z-index: 1;
     transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
   .swiper-slide img {
+    position: relative;
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
-    position: relative;
     z-index: 0;
 }
 
@@ -102,9 +102,9 @@
 }
 
 .swiper-slide__inner__text {
+    margin: 0;
     font-size: 2.4rem;
     font-weight: bold;
-    margin: 0;
     line-height: 1.5;
     letter-spacing: 0.1em;
     transition: text-shadow 0.3s ease;
@@ -122,18 +122,18 @@
 /* about
 ---------------------------------------------------------------------------*/
 .about {
-    display: flex;
     position: relative;
+    display: flex;
     max-width: 100%;
 }
 
 .about-background {
-    width: 60vw;
-    display: flex;
     position: absolute;
+    display: flex;
+    width: 60vw;
+    height: 100%;
     top: 0;
     left: 0;
-    height: 100%;
     background-color: var(--light-color); 
 }
 
@@ -168,6 +168,12 @@
         width: 100%;
         padding: 32px 20px;
     }
+
+.about-inner__body{
+    width: 100%;
+}
+
+
 }
 
 .about-pattern{
@@ -217,17 +223,17 @@
 }
 
 @media screen and (max-width: 768px){
+    .about-inner__auther {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
     .about-inner__title {
         font-size: 3.2rem;
         margin-bottom: 24px;
     }
     .about-inner__txt {
         margin-bottom: 24px;
-    }
-    .about-inner__auther {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
     }
 }
 .auther-inner{
@@ -237,17 +243,17 @@
 }
 
 .about-inner__name {
-    font-size: 2.4rem;
-    color: var(--accent-color-1);
-    font-family: "La Belle Aurore", cursive;
-    font-weight: 400;
-    font-style: normal;
     margin-bottom: 16px;
+    font-family: "La Belle Aurore", cursive;
+    font-style: normal;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--accent-color-1);
 }
 .author-inner__icons{
     display: flex;
-    justify-content: space-between;
     width: 100%; 
+    justify-content: space-between;
 }
 .author-inner__icons a img {
     width: 20px;
@@ -272,28 +278,32 @@
 
 @media screen and (max-width: 1200px){
     .about-image {
-        width: calc(100vw - 50% - 80px);
+        width: calc(100vw - 50% - 64px);
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .about-image {
+        width: calc(100vw - 50% - 40px);
     }
 }
 
 @media screen and (max-width: 768px){
     .about-image {
+        width: 40%;
+        height: 60%;
+        top: 80%;
         left: auto;
         right: 0;
-        top: 80%;
-        height: 60%;
-        width: 40%;
     }
 }
 /* ratest post
 ---------------------------------------------------------------------------*/
 .ratest-post{
-
-    max-width: 1400px;
     width: 100%;
+    max-width: 1400px;
     height: 200vh;
     margin: 150px auto 0 auto;
-
 }
 
 .ratest-post__content{
@@ -301,6 +311,16 @@
     flex-direction: column;
     
 }
+
+@media screen and (max-width: 768px) {
+    .ratest-post{
+        width: 100%;
+        max-width: 1200px;
+        height: 200vh;
+        margin: 200px auto 0 auto;
+    }
+}
+
 
 
 /* カードエリア

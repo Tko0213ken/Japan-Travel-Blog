@@ -30,18 +30,17 @@ body{
 /* Header
 ---------------------------------------------------------------------------*/
 .header{
-    /* max-width: 1400px;  */
-    width: 100%;
-    height: 90px;
-    padding-left: 40px;
-    padding-right: 40px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    height: 90px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
     top: 0;
-    z-index: 1000;
     position: fixed;
+    z-index: 1000;
     background: var(--base-color);
     transition: transform 0.3s
 }
@@ -145,7 +144,7 @@ body{
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -6px; /* テキストからの距離を調整 */
+        bottom: -6px;
         width: 70%; 
         height: 1px;
         background-color: var(--accent-color-1);
@@ -156,8 +155,8 @@ body{
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -9px; /* 線と丸の位置を調整 */
-        width: 6px; /* 丸の直径 */
+        bottom: -9px;
+        width: 6px;
         height: 3px;
         background-color:var(--accent-color-1);
         border-bottom-left-radius: 6px;
@@ -225,25 +224,25 @@ body{
 }
 
 .title-text{
-    font-size: 2.4rem;
     font-family: var(--title-font-family);
-    color:var(--accent-color-1); 
+    font-size: 2.4rem;
     letter-spacing: 0.05em;
     position: relative;
+    color:var(--accent-color-1); 
 }
 
 .title-text::before{
     content: '';
     position: absolute;
     display: inline-block;
-    background-image: url(img/top-treatment.png);
     height: 100%;
     width: 100%;
+    top: 60%;
+    left: 50%;
+    background-image: url(img/top-treatment.png);
     background-size: contain;
     background-repeat: no-repeat;
     vertical-align: middle;
-    left: 50%;
-    top: 60%;
 }
 
 /* ボタン
@@ -340,7 +339,6 @@ body{
     text-overflow: ellipsis;
 }
 
-/* カードのテキスト部分 */
 .card-type1__txt {
     font-size: 1.4rem;
     line-height: 1.5;
