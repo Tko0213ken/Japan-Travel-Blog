@@ -290,9 +290,9 @@
 
 @media screen and (max-width: 768px){
     .about-image {
-        width: 40%;
-        height: 60%;
-        top: 80%;
+        width: 70%;
+        height: 70%;
+        top: 70%;
         left: auto;
         right: 0;
     }
@@ -302,7 +302,6 @@
 .ratest-post{
     width: 100%;
     max-width: 1400px;
-    height: 200vh;
     margin: 150px auto 0 auto;
 }
 
@@ -316,14 +315,13 @@
     .ratest-post{
         width: 100%;
         max-width: 1200px;
-        height: 200vh;
-        margin: 200px auto 0 auto;
+        margin: 250px auto 0 auto;
     }
 }
 
 
 
-/* カードエリア
+/* RATEST-POST カードエリア
 ---------------------------------------------------------------------------*/
 .ratest-post__card {
     width: 100%;
@@ -357,6 +355,55 @@
     max-width: 100%;
 }
 
+
+/* populer post
+---------------------------------------------------------------------------*/
+.populer-post__background{
+width: 100%;
+background-color: var(--light-color);
+margin-top: 150px;
+}
+
+.populer-post{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 64px 0;
+
+}
+
+.populer-post__content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .populer-post{
+        width: 100%;
+        max-width: 1200px;
+        margin: 200px auto 0 auto;
+    }
+}
+
+/* POPULER-POST カードエリア
+---------------------------------------------------------------------------*/
+.populer-post__card {
+    width: 100%;
+    max-width: 1000px;
+    max-width: var(--content-erea-width);
+    margin: 40px auto 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.populer-post__card-item.item1{
+    grid-row: 1/1;
+    grid-column: 1/4;
+}
 
 
 
