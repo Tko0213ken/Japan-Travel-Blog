@@ -60,37 +60,30 @@ body{
 .gnav__list{
     display: flex;
 }
-
-.search-icon{
-    padding-left: 30px;
-    padding-right: 0;
-}
-
-
 .gnav__item{
-    /* padding-left: 15px;
-    padding-right: 15px; */
     text-align: center;
     align-items: center;
     font-family: var(--title-font-family);
 }
-
 .gnav__link{
     padding-left: 15px;
     padding-right: 15px;
 }
-
-
+.gnav__link:hover {
+    color:var(--accent-color-1); 
+}
 .header-logo{
     font-family:var(--logo-font-family) ;
     font-weight: 700;
     font-style: italic;
     font-size: 3.6rem;
 }
-
-.gnav__link:hover {
-    color:var(--accent-color-1); 
+.search-icon{
+    padding-left: 30px;
+    padding-right: 0;
 }
+
+
 
 @media screen and (max-width: 1024px){
     .header{
@@ -212,7 +205,6 @@ body{
       .hamburger__line::after {
         bottom: -8px;
       }
-      /*閉じる*/
       .hamburger._open .hamburger__line{
         background: transparent;
       }
