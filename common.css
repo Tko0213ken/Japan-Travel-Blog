@@ -553,3 +553,89 @@ footer {
     font-size: 0.9rem;
     color: #ccc;
 }
+
+
+
+
+/* カード　テスト
+---------------------------------------------------------------------------*/
+.ratest-post_test__card-item {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto; /* 画像, タイトル, テキスト, フッター */
+}
+
+.card-type_test {
+    /* display: block; */
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    width: 100%;
+    border-radius: 0 0 8px 0;
+    overflow: hidden;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: var(--base-color);
+}
+
+.card-type_test:hover {
+    transform: none;
+}
+.card-type_test:hover .card-type_test__thumb img {
+    transform: scale(1.1); 
+}
+.card-type_test:hover .card-type_test__title {
+    color:var(--accent-color-1);
+}
+
+.card-type_test__thumb{
+    overflow: hidden;
+}
+
+.card-type_test__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 8/5;
+    display: block;
+    transition: transform 0.3s ease; 
+}
+
+.card-type_test__title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-family: var(--title-font-family);
+    color:var(--font-main-color);
+    margin: 16px;
+    transition: transform 0.3s ease; 
+    /* display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.card-type_test__txt {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: var(--font-main-color);
+    margin: 0 16px 16px;
+    text-align: justify;
+    /* display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.card-type_test__footer {
+    font-size: 0.8rem;
+    color:var(--font-light-color);
+    margin: 0 16px 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-type_test__date,
+.card-type_test__category {
+    padding: 0 8px;
+}
