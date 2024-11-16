@@ -303,8 +303,15 @@ body{
 
 /* カード　タイプ1
 ---------------------------------------------------------------------------*/
+.ratest-post__card-item {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto; /* 画像, タイトル, テキスト, フッター */
+}
+
 .card-type1 {
-    display: block;
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
     width: 100%;
     border-radius: 0 0 8px 0;
     overflow: hidden;
@@ -343,11 +350,6 @@ body{
     color:var(--font-main-color);
     margin: 16px;
     transition: transform 0.3s ease; 
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .card-type1__txt {
@@ -620,11 +622,11 @@ footer {
     color: var(--font-main-color);
     margin: 0 16px 16px;
     text-align: justify;
-    /* display: -webkit-box;
-    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis; */
+    text-overflow: ellipsis;
 }
 
 .card-type_test__footer {
