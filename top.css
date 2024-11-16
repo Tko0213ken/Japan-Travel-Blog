@@ -411,7 +411,7 @@ margin-top: 150px;
 }
 
 @media screen and (min-width: 769px) {
-    .populer-post__card-item.item1{
+    .card-item.item1{
         grid-row: 1/1;
         grid-column: 1/4;
     }
