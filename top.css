@@ -200,7 +200,6 @@
     font-size: 3.6rem;
     letter-spacing: 0.1em;
     font-family: var(--logo-font-family);
-    font-weight: 700;
     font-style: italic;
     font-weight: bold;
     color: var(--accent-color-1);
@@ -353,7 +352,7 @@
     }
 }
 
-.ratest-post__card-item {
+.card-item {
     width: 100%;
     max-width: 100%;
 }
@@ -402,16 +401,20 @@ margin-top: 150px;
     gap: 20px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     .populer-post__card {
         grid-template-columns: repeat(2, 1fr);
         margin: 20px auto 0 auto;
         padding: 0 20px;
     }
+    .card.item1{
+        grid-row: 1/1;
+        grid-column: 1/1;
+    }
 }
 
 @media screen and (min-width: 769px) {
-    .card-item.item1{
+    .card.item1{
         grid-row: 1/1;
         grid-column: 1/4;
     }

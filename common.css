@@ -291,11 +291,35 @@ body{
 }
 
 
-/* カード　共通
+/* カード
 ---------------------------------------------------------------------------*/
-.card-item {
+.card{
     display: grid;
     grid-template-rows: auto 1fr auto auto;
+}
+
+.card-item{
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    width: 100%;
+    border-radius: 0 0 8px 0;
+    overflow: hidden;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: var(--base-color);
+}
+
+.card__thumb{
+    overflow: hidden;
+}
+.card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 8/5;
+    display: block;
+    transition: transform 0.3s ease; 
 }
 
 .card__title {
@@ -327,48 +351,19 @@ body{
     display: flex;
     justify-content: flex-end;
 }
-
 .card__date,
 .card__category {
     padding: 0 8px;
 }
 
-
-/* カード　タイプ1
----------------------------------------------------------------------------*/
-.card-type1 {
-    display: grid;
-    grid-row: span 4;
-    grid-template-rows: subgrid;
-    width: 100%;
-    border-radius: 0 0 8px 0;
-    overflow: hidden;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    background-color: var(--base-color);
-}
-
-.card-type1:hover {
+.card:hover {
     transform: none;
 }
-.card-type1:hover .card-type1__thumb img {
+.card:hover .card__thumb img {
     transform: scale(1.1); 
 }
-.card-type1:hover .card__title {
+.card:hover .card__title {
     color:var(--accent-color-1);
-}
-
-.card-type1__thumb{
-    overflow: hidden;
-}
-
-.card-type1__thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 8/5;
-    display: block;
-    transition: transform 0.3s ease; 
 }
 
 /* カード　タイプ2
@@ -376,15 +371,16 @@ body{
 .card-type2{
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     border-radius: 0 0 8px 0;
-    /* overflow: hidden; */
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     background-color: var(--base-color);
 }
+
+
+
+
 
 .card-type2__body{
     width: 100%;
@@ -436,6 +432,30 @@ body{
     aspect-ratio: 8/5;
     display: block;
     transition: transform 0.3s ease; 
+}
+
+@media screen and (max-width: 768px) {
+    .card-type2{
+        display: grid;
+        grid-row: span 4;
+        grid-template-rows: subgrid;
+        inset: 0;
+    }
+
+    .card-type2__body{
+        padding: 0;
+    }
+
+    .card-type2 .card__txt{
+        display: none;
+    }
+}
+
+@media screen and (min-width:769px){
+    .card-type2{
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 /* フッター
@@ -512,7 +532,3 @@ footer {
     font-size: 0.9rem;
     color: #ccc;
 }
-
-
-
-
