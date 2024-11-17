@@ -94,8 +94,8 @@
 ---------------------------------------------------------------------------*/
 .swiper-slide__inner {
     position: absolute;
-    bottom: 40px;
     left: 40px;
+    bottom: 40px;
     color: #fff;
     font-family: 'Times New Roman', Times, serif;
     z-index: 2;
@@ -110,14 +110,12 @@
     transition: text-shadow 0.3s ease;
 }
 
-/* @media screen and (max-width: 768px){
-    .swiper-slide__inner__text {
-        font-size: 1.6rem;
-        font-weight: bold;
-        line-height: 1.5;
-        letter-spacing: 0.05em;
+@media screen and (max-width: 500px){
+    .swiper-slide__inner {
+        left: 20px;
+    bottom: 20px;
     }
-} */
+}
 
 /* about--レイアウト配置
 ---------------------------------------------------------------------------*/
@@ -199,7 +197,7 @@
 .about-inner__title {
     font-size: 3.6rem;
     letter-spacing: 0.1em;
-    font-family: var(--logo-font-family);
+    font-family: var(--title-font-family);
     font-style: italic;
     font-weight: bold;
     color: var(--accent-color-1);
@@ -208,10 +206,10 @@
 
 .about-inner__txt {
     font-size: 1.4rem;
-    line-height: 1.7;
-    letter-spacing: 0.04em;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
     margin-bottom: 32px;
-    text-align: justify;
+    text-align:justify;
 }
 
 @media screen and (max-width: 768px){
@@ -221,6 +219,17 @@
     }
     .about-inner__txt {
         margin-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .about-inner__title {
+        font-size: 2.4rem;
+        margin-bottom: 16px;
+    }
+    .about-inner__txt {
+        font-size:1.3rem;
+        margin-bottom: 16px;
     }
 }
 
@@ -260,7 +269,7 @@
     .about-inner__auther {
         display: flex;
         flex-direction: column;
-        margin-right: calc(55% + 16px);
+        margin-right: calc(45% + 16px);
         margin-left: auto;
     }
     .auther-inner__name{
@@ -269,6 +278,16 @@
     .author-inner__icons a img {
         width: 18px;
         height: 18px;
+    }
+}
+@media screen and (max-width: 500px){
+    .about-inner__auther {
+        margin-right: calc(50% + 16px);
+        margin-left: auto;
+    }
+    
+    .auther-inner__name{
+        font-size: 1.6rem;
     }
 }
 
@@ -306,9 +325,19 @@
 
 @media screen and (max-width: 768px){
     .about-image {
-        width: 55%;
-        height: 80%;
+        width: 45%;
+        height: 70%;
         top: 75%;
+        left: auto;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .about-image {
+        width: 50%;
+        height: 50%;
+        top: 79%;
         left: auto;
         right: 0;
     }
@@ -330,10 +359,15 @@
 
 @media screen and (max-width: 768px) {
     .ratest-post{
-        width: 100%;
-        max-width: 1200px;
-        margin: 300px auto 0 auto;
+        margin: 250px auto 0 auto;
     }
+}
+
+@media screen and (max-width: 768px) {
+    .ratest-post{
+        margin: 200px auto 0 auto;
+    }
+
 }
 
 

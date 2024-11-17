@@ -105,28 +105,28 @@ body{
         background: #fff;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch; 
-      }
-      .gnav._open {
+    }
+    .gnav._open {
         display: block;/* _open がついたら表示。classのつけ外しはJSで */
         position: fixed;
-      }
-      .gnav__list {
+    }
+    .gnav__list {
         width: 100%;
         flex-direction: column;
         border-top: 1px solid #e7e7e7;
-      }
-      .gnav__item {
+    }
+    .gnav__item {
         border-bottom: 1px solid #e7e7e7;
-      }
-      .gnav__link {
+    }
+    .gnav__link {
         display: block;
         padding: 15px 20px;
         text-align: left;
-      }
-      .gnav__link._current {
+    }
+    .gnav__link._current {
         padding-left: 15px;
         border-left: 5px solid var(--accent-color-1);
-      }
+    }
 }
 
 
@@ -247,6 +247,12 @@ body{
     vertical-align: middle;
 }
 
+@media screen and (max-width: 500px){
+    .title-text{
+        font-size: 2.0rem;
+    }
+}
+
 /* ボタン
 ---------------------------------------------------------------------------*/
 .button a {
@@ -290,6 +296,11 @@ body{
   right: 1.4rem;
 }
 
+@media screen and (max-width: 500px){
+    .button a {
+        margin-top: 36px;
+    }
+}
 
 /* カード
 ---------------------------------------------------------------------------*/
@@ -377,6 +388,15 @@ body{
 }
 .card:hover .card__title {
     color:var(--accent-color-1);
+}
+
+@media screen and (max-width: 500px){
+    .card__title {
+        font-size: 1.6rem;
+    }
+    .card__txt {
+        font-size: 1.3rem;
+    }
 }
 
 /* カード　タイプ2
