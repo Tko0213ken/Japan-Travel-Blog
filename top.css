@@ -385,7 +385,7 @@ margin-top: 150px;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 64px 0;
+    padding: 64px 0 100px;
 
 }
 
@@ -398,12 +398,12 @@ margin-top: 150px;
 
 @media screen and (max-width: 768px) {
     .populer-post__background{
-        margin-top: 80px;
+        margin-top: 64px;
     }
     .populer-post{
         width: 100%;
         max-width: 1200px;
-        padding: 32px 0;
+        padding: 32px 0 64px ;
     }
 }
 
