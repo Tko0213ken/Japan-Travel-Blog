@@ -23,6 +23,7 @@ body{
     margin: 0;
     padding: 0;
     background-image: url(img/桜背景用.png);
+    background-attachment: fixed;
 }
 
 /* Header

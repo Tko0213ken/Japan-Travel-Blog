@@ -432,7 +432,7 @@ margin-top: 150px;
 
 @media screen and (max-width: 768px) {
     .populer-post__background{
-        margin-top: 64px;
+        margin-top: 80px;
     }
     .populer-post{
         width: 100%;
@@ -472,8 +472,10 @@ margin-top: 150px;
     }
 }
 
-
-
-
+/* @media screen and (max-width: 768px) {
+    .populer-post__card {
+        grid-template-columns: 1fr;
+    }
+} */
 
 
