@@ -51,7 +51,14 @@ let currentScrollPosition = 0;
 // requestAnimationFrameの実行中かどうかを保持する変数。過剰な発火を防ぐ
 let ticking = false;
 
+function isGnavOpen() {
+    return document.querySelector('.gnav').classList.contains('_open');
+}
+
 function scrollUpDown(scrollPos, lastScrollPos) {
+    if (isGnavOpen()) {
+        return;
+    }
     // 現在のスクロール位置が前回のスクロール位置よりも大きい場合、スクロールダウンを検知
     if (scrollPos > lastScrollPos) {
         // スクロールダウン
