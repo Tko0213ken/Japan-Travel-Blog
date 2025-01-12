@@ -1,6 +1,19 @@
 @charset "UTF-8";
 
 :root {
+  /* color */
+  --main_deap-red: #cb4042;
+  --main_white: #fff;
+  --main_cherry-blossom: #fff3f4;
+  --sub_gray: #eeeded;
+  --font_black: #666666;
+  --line: #d7d7d7;
+  --post-date: #707070;
+  --bg_footer: #1c1c1c;
+  --gold: #dcc878;
+  --silver: #c0c0c0;
+  --bronze: #c47222;
+
   --base-color: #fff;
   --accent-color-1: #cb4042;
   --accent-color-2: #dcc878;
@@ -23,6 +36,20 @@ body {
   padding: 0;
   background-image: url(img/桜背景用.png);
   background-attachment: fixed;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: var(--title-font-family);
+  color: var(--font_black);
+}
+
+.text {
 }
 
 /* Header
@@ -70,7 +97,7 @@ body {
 .gnav__link:hover {
   color: var(--accent-color-1);
 }
-.header-logo {
+.header__logo {
   font-family: var(--logo-font-family);
   font-weight: 700;
   font-style: italic;
@@ -87,7 +114,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .header-logo {
+  .header__logo {
     font-size: 2.4rem;
   }
   .search-icon {
@@ -123,7 +150,7 @@ body {
     padding: 15px 20px;
     text-align: left;
   }
-  .gnav__link._current {
+  .gnav__link--current {
     padding-left: 15px;
     border-left: 5px solid var(--accent-color-1);
   }
@@ -136,11 +163,11 @@ body {
     position: relative;
   }
 
-  .gnav__link._current {
+  .gnav__link--current {
     color: var(--accent-color-1);
   }
 
-  .gnav__link._current::after {
+  .gnav__link--current::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -151,7 +178,7 @@ body {
     background-color: var(--accent-color-1);
   }
 
-  .gnav__link._current::before {
+  .gnav__link--current::before {
     content: "";
     position: absolute;
     left: 50%;

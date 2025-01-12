@@ -1,6 +1,19 @@
 @charset "UTF 8";
 
 :root {
+  --main_deap-red: #cb4042;
+  --main_white: #fff;
+  --main_cherry-blossom: #fff3f4;
+  --sub_gray: #eeeded;
+  --font_black: #666666;
+  --font_white: #fff;
+  --line: #d7d7d7;
+  --post-date: #707070;
+  --bg_footer: #1c1c1c;
+  --gold: #dcc878;
+  --silver: #c0c0c0;
+  --bronze: #c47222;
+
   --base-color: #fff;
   --accent-color-1: #cb4042;
   --accent-color-2: #dcc878;
@@ -118,34 +131,48 @@
 ---------------------------------------------------------------------------*/
 .about {
   position: relative;
+  text-align: center;
+  height: 100vh; /* 画面全体を表示 */
   display: flex;
-  max-width: 100%;
-}
-
-.about-background {
-  position: absolute;
-  display: flex;
-  width: 60vw;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: var(--light-color);
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
-.about-inner {
+.about__background-image {
+  position: absolute;
+  background-size: cover;
+}
+
+.about__image-gray {
+  background-image: url("./img/bg_gray.png");
+  aspect-ratio: 1/1;
+  width: 35%;
+  height: auto;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.about__image-pink {
+  background-image: url("./img/bg_pink.png");
+  aspect-ratio: 1/1;
+  width: 50%;
+  height: auto;
+  top: 40%;
+  left: 50%;
+  transform: translate(0, -50%);
+  z-index: 1;
+}
+
+.about__inner {
+  position: relative;
   display: flex;
   width: var(100% - 80px);
   max-width: var(--content-erea-width);
   margin: 0 auto;
-  padding: 64px 40px;
-  z-index: 2;
-}
-
-.about-inner__body {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+  z-index: 100000;
 }
 
 @media screen and (max-width: 1200px) {
@@ -184,18 +211,9 @@
 
 /* about--タイトル、テキスト
 ---------------------------------------------------------------------------*/
-.about-inner__title {
-  font-size: 3.6rem;
-  letter-spacing: 0.1em;
-  font-family: var(--title-font-family);
-  font-style: italic;
-  font-weight: bold;
-  color: var(--accent-color-1);
-  margin-bottom: 32px;
-}
 
-.about-inner__txt {
-  font-size: 1.4rem;
+.about__text {
+  font-size: 2.4rem;
   line-height: 1.5;
   letter-spacing: 0.05em;
   margin-bottom: 32px;
