@@ -5,36 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Japan Travel Blog</title>
     <meta name="robots" content="noindex" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-      defer
-    ></script>
-    <script src="./script.js" defer></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./common.css" />
     <link rel="stylesheet" href="./top.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=search"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Hina+Mincho&family=La+Belle+Aurore&family=Montserrat:ital,wght@1,700&family=Zen+Old+Mincho:wght@600;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Hina+Mincho&family=Montserrat:ital,wght@1,700&family=Zen+Old+Mincho:wght@600;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Hina+Mincho&family=La+Belle+Aurore&family=Montserrat:ital,wght@1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Old+Mincho:wght@600;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Hina+Mincho&family=La+Belle+Aurore&family=Montserrat:ital,wght@1,700&family=Zen+Old+Mincho:wght@600;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Hina+Mincho&family=Montserrat:ital,wght@1,700&family=Zen+Old+Mincho:wght@600;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Hina+Mincho&family=La+Belle+Aurore&family=Montserrat:ital,wght@1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Old+Mincho:wght@600;900&display=swap" rel="stylesheet"/>
   </head>
 
   <body>
@@ -46,104 +25,70 @@
             <a href="#" class="gnav__link gnav__link--current">Home</a>
           </li>
           <li class="gnav__item"><a href="#" class="gnav__link">About</a></li>
-          <li class="gnav__item"><a href="#" class="gnav__link">Season</a></li>
+          <li class="gnav__item gnav__link--has-dropdown">
+            <a href="#" class="gnav__link">
+              <span class="gnav__text">Seasons</span>
+              <span class="gnav__chevron"></span>
+            </a>
+            <ul class="dropdown">
+              <li class="dropdown__item"><a href="#" class="dropdown__txt">Spring</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__txt">Summer</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__txt">Autumn</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__txt">Winter</a></li>
+            </ul>
+          </li>
           <li class="gnav__item">
-            <a href="#" class="gnav__link">Category</a>
+            <a href="#" class="gnav__link">Popular Post</a>
           </li>
         </ul>
       </nav>
-      <div class="search-icon">
-        <!-- <span class="material-symbols-outlined"> search </span> -->
+      <button type="button" class="serch-icon">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666">
           <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
         </svg>
-      </div>
+      </button>
+      <div class="serch__wrapper">
+        <div class="serch__bg"></div>
+        <div class="serch__content">
+          <h2 class="serch__form-txt">Search Articles by Keywords</h2>
+            <form action="" class="serch__form">
+                <input type="text" name="" id="" placeholder="Type keywords to search" class="serch__input">
+                <button type="submit" class="serch__form-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                  </svg>
+                </button>
+            </form>
+            <button class="close-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+              <span>Close</span>
+            </button>
+        </div>
+    </div>
+
       <button id="js-btnHamburger" class="hamburger">
         <span class="hamburger__line"></span>
       </button>
     </header>
-
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <a href="#" class="swiper-slide__link">
-            <img src="img/slider-img/food.jpeg" alt="food" />
-            <div class="swiper-slide__inner">
-              <p class="swiper-slide__inner__text">
-                Enjoying <br />
-                Delicious Foods
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="#" class="swiper-slide__link">
-            <img src="img/slider-img/culture.jpeg" alt="culture" />
-            <div class="swiper-slide__inner">
-              <p class="swiper-slide__inner__text">
-                Experiencing <br />
-                Japanese Culture
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="#" class="swiper-slide__link">
-            <img src="img/slider-img/Tourist Spot.jpg" alt="Tourist Spot" />
-            <div class="swiper-slide__inner">
-              <p class="swiper-slide__inner__text">
-                Exploring <br />
-                Tourist Spot
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="#" class="swiper-slide__link">
-            <img src="img/slider-img/Travel Tips.jpeg" alt="Travel Tips" />
-            <div class="swiper-slide__inner">
-              <p class="swiper-slide__inner__text">
-                Checking <br />
-                Travel Tips
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="#" class="swiper-slide__link">
-            <img src="img/slider-img/Things To Do.jpeg" alt="hings To Do" />
-            <div class="swiper-slide__inner">
-              <p class="swiper-slide__inner__text">
-                Things To Do <br />
-                In Japan
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- <div class="swiper-pagination"></div> -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-
+    
     <main>
       <div class="about">
-        <div class="about__background-image about__image-gray"></div>
-        <div class="about__background-image about__image-pink"></div>
-        <div class="about__inner">
-          <div class="about__catchphrase">
-            <!-- <img
-          src="./img/DESCOVER JAPAN _pc.png"
-          alt="Discover Japan"
-          class="about__catchphrase-image"
-        /> -->
+        <div class="about__wrapper">
+          <div class="about__content">
+            <h2 class="about__title">Discover <br>The <span class="highlight"> Japan</span>'s <br> Hidden Wonders</h2>
+            <p class="about__text">
+              Born and raised in Japan, I'm here to share the beauty of its culture, cuisine, and hidden gems.
+              Discover authentic Japan through the eyes of a local—your journey begins here!
+            </p>
+            <div class="button">
+              <a href="#">About us</a>
+            </div>
+            <div class="about__content-bg"></div>
           </div>
-          <p class="about__text">
-            Born and raised in Japan, I'm here to share the beauty of its culture, cuisine, and hidden gems.
-            Discover authentic Japan through the eyes of a local—your journey begins here!
-          </p>
-          <div class="button">
-            <a href="#">VIEW MORE</a>
+          <div class="about__gallery">
+            <img class="img__left" src="./img/about-gallery/culture.jpeg" alt="Japanese culture" />
+            <img class="img-right-top" src="./img/about-gallery/food.jpeg" alt="Japanese foods" />
+            <img class="img-right-bottom" src="./img/about-gallery/technology.jpeg" alt="Japanese technology" />
           </div>
         </div>
       </div>

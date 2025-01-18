@@ -3,46 +3,27 @@ const nav = document.querySelector(".gnav");
 
 // クリックイベントを追加
 hamburger.addEventListener("click", function () {
-    // ハンバーガーボタンとナビゲーションの_openクラスを切り替え
-    hamburger.classList.toggle("_open");
-    nav.classList.toggle("_open");
+  // ハンバーガーボタンとナビゲーションの_openクラスを切り替え
+  hamburger.classList.toggle("_open");
+  nav.classList.toggle("_open");
 });
 
+const headerSearch = document.querySelector(".serch-icon");
+const searchWrapper = document.querySelector(".serch__wrapper");
+const closeElements = document.querySelectorAll(".close-btn, .serch__bg");
 
-//Swiper.jsの初期化
-const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    loop: true,
-    speed: 1000,
-    centeredSlides: true,
-   
-    breakpoints:{
-        1024:{
-            slidesPerView: 1.5,
-            spaceBetween: 15,
-            centeredSlides : true
-            },
-        768:{
-        slidesPerView: 1.2,
-        spaceBetween: 10,
-        centeredSlides : true
-        }
-    },
-    slidesPerView: 1,
-    spaceBetween: 5,
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
+// フェードインの処理
+headerSearch.addEventListener("click", function () {
+  console.log("click");
+  searchWrapper.classList.add("active");
+});
+
+// フェードアウトの処理
+closeElements.forEach((element) => {
+  element.addEventListener("click", function () {
+    searchWrapper.classList.remove("active");
   });
-
+});
 
 //   // スクロール前のスクロール位置を保持する変数
 // let lastScrollPosition = window.scrollY;
