@@ -14,19 +14,25 @@
   --silver: #c0c0c0;
   --bronze: #c47222;
 
-  --base-color: #fff;
-  --accent-color-1: #cb4042;
-  --accent-color-2: #dcc878;
-  --light-color: #fff3f4;
-  --font-main-color: #2b2b2b;
-  --font-light-color: #707070;
-
   --logo-font-family: "Cormorant Garamond", serif;
   --title-font-family: "Times New Roman", Times, serif;
   --text-font-family: Arial, Helvetica, sans-serif;
 
   --content-erea-width: 1400px;
 }
+
+/* main {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+
+  grid-template-rows: repeat(4, auto);
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    grid-template-columns: 20px 1fr 20px;
+  }
+} */
 
 /* about--レイアウト配置
 ---------------------------------------------------------------------------*/
@@ -35,6 +41,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin: 0 auto;
   height: 100vh;
   width: 100%;
   max-width: var(--content-erea-width);
@@ -49,6 +56,7 @@
 }
 
 .about__content {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,10 +67,10 @@
 
 .about__content-bg {
   position: absolute;
-  top: 100px;
-  left: 10%;
-  width: 50%;
-  max-width: 480px;
+  top: -100px;
+  left: 20%;
+  width: 100%;
+  max-width: 500px;
   aspect-ratio: 1/1;
   height: auto;
   background-image: url("./img/日本列島.png");
@@ -100,6 +108,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 24px;
+  filter: brightness(0.9);
 }
 
 @media screen and (max-width: 1024px) {
@@ -108,6 +117,11 @@
   }
   .about__wrapper {
     margin: 100px 20px 0 20px;
+  }
+  .about__content-bg {
+    top: -40px;
+    left: 25%;
+    width: 85%;
   }
 }
 
@@ -127,9 +141,9 @@
   .about__content-bg {
     right: 40px;
     left: auto;
-    top: 70px;
-    width: 40%;
-    min-width: 280px;
+    top: -20px;
+    width: 45%;
+    min-width: 300px;
   }
 
   .about__gallery {
@@ -145,7 +159,7 @@
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 520px) {
   .about__content-bg {
     left: auto;
     right: auto;
@@ -192,128 +206,327 @@
   }
 }
 
-/* ratest post
+/*【共通】 Four-aseasons,Popular-Post,Latest-Post　共通全体配置
 ---------------------------------------------------------------------------*/
-.ratest-post {
-  width: 100%;
-  max-width: 1400px;
-  margin: 150px auto 0 auto;
-}
-
-.ratest-post__content {
+.four-seasons,
+.popular-post,
+.latest-post {
   display: flex;
   flex-direction: column;
-}
-
-@media screen and (max-width: 768px) {
-  .ratest-post {
-    margin: 250px auto 0 auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .ratest-post {
-    margin: 200px auto 0 auto;
-  }
-}
-
-/* RATEST-POST カードエリア
----------------------------------------------------------------------------*/
-.ratest-post__card {
+  justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: var(--content-erea-width);
-  margin: 40px auto 0 auto;
+  margin: 150px auto 0 auto;
   padding: 0 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
 }
 
 @media screen and (max-width: 1024px) {
-  .ratest-post__card {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 20px auto 0 auto;
-    padding: 0 20px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .ratest-post__card {
-    grid-template-columns: 1fr;
-    margin: 20px auto 0 auto;
+  .four-seasons,
+  .popular-post,
+  .latest-post {
     padding: 0 20px;
   }
 }
 
-.card-item {
-  width: 100%;
-  max-width: 100%;
-}
-
-/* populer post
----------------------------------------------------------------------------*/
-.populer-post__background {
-  width: 100%;
-  background-color: var(--light-color);
-  margin-top: 150px;
-}
-
-.populer-post {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 64px 0 100px;
-}
-
-.populer-post__content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 @media screen and (max-width: 768px) {
-  .populer-post__background {
-    margin-top: 80px;
-  }
-  .populer-post {
-    width: 100%;
-    max-width: 1200px;
-    padding: 32px 0 64px;
+  .four-seasons,
+  .popular-post,
+  .latest-post {
+    margin: 150px auto 0 auto; /*【検討】100px or 150px検討 */
   }
 }
 
-/* POPULER-POST カードエリア
+/* Four Seasons
 ---------------------------------------------------------------------------*/
-.populer-post__card {
+.four-seasons__card-wrapper {
   width: 100%;
-  max-width: var(--content-erea-width);
-  margin: 40px auto 0 auto;
-  padding: 0 40px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 20px;
 }
 
+.four-seasons__card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 16px;
+  overflow: hidden;
+  height: auto;
+  transition: transform 0.8s ease;
+}
+
+.four-seasons__thumb {
+  width: 100%;
+}
+
+.four-seasons__thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.8s ease;
+  filter: brightness(0.85);
+}
+
+.four-seasons__card:hover .four-seasons__thumb img {
+  transform: scale(1.05);
+}
+
+.four-seasons__title {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 3.2rem;
+  font-weight: bold;
+  font-family: var(--title-font-family);
+  color: var(--main_white);
+  transition: all 0.8s ease;
+}
+
+.img__kangi {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 60px;
+  aspect-ratio: 1/1;
+  height: auto;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 1024px) {
+  .four-seasons__card-wrapper {
+    gap: 16px;
+  }
+  .four-seasons__title {
+    top: 12px;
+    left: 12px;
+    font-size: 2.4rem;
+  }
+  .img__kangi {
+    bottom: 12px;
+    right: 12px;
+    width: 40px;
+  }
+}
 @media screen and (max-width: 768px) {
-  .populer-post__card {
+  .four-seasons__card-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    padding: 0 24px;
+  }
+}
+
+/* popular post
+---------------------------------------------------------------------------*/
+.pp__cards-wrapper {
+  display: grid;
+  margin-bottom: 72px;
+  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  row-gap: 24px;
+  column-gap: 40px;
+  grid-template-areas:
+    "No1 No2"
+    "No1 No3"
+    "No1 No4";
+}
+
+#Rnking__No1 {
+  grid-area: No1;
+}
+#Rnking__No2 {
+  grid-area: No2;
+}
+#Rnking__No3 {
+  grid-area: No3;
+}
+#Rnking__No4 {
+  grid-area: No4;
+}
+
+@media screen and (max-width: 768px) {
+  .pp__cards-wrapper {
+    display: grid;
+    grid-template: repeat(4, 1fr) / 1fr;
+    column-gap: 0;
+    padding: 0 24px;
+    row-gap: 16px;
+    grid-template-areas:
+      "No1"
+      "No2"
+      "No3"
+      "No4";
+  }
+}
+
+#Rnking__No1 > .pp__card-item {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main_white);
+}
+
+#Rnking__No1 > .pp__card-item > .card__body {
+  width: 90%;
+}
+
+#Rnking__No1 > .pp__card-item > .pp__card-thumb {
+  width: 90%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+#Rnking__No1 > .pp__card-item > .pp__card-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 8/5;
+  transition: transform 0.5s ease;
+  border-radius: inherit;
+}
+
+@media screen and (max-width: 768px) {
+  #Rnking__No1 > .pp__card-item {
+    flex-direction: row;
+  }
+  #Rnking__No1 > .pp__card-item > .pp__card-thumb {
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#Rnking__No2 > .pp__card-item,
+#Rnking__No3 > .pp__card-item,
+#Rnking__No4 > .pp__card-item {
+  display: flex;
+  background-color: var(--main_white);
+  /* position: relative;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.5s ease; */
+}
+
+#Rnking__No2 > .pp__card-item > .card__body,
+#Rnking__No3 > .pp__card-item > .card__body,
+#Rnking__No4 > .pp__card-item > .card__body {
+  /* height: 100%;
+  max-height: 150px; */
+  /* 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+
+#Rnking__No2 > .pp__card-item > .pp__card-thumb,
+#Rnking__No3 > .pp__card-item > .pp__card-thumb,
+#Rnking__No4 > .pp__card-item > .pp__card-thumb {
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  #Rnking__No2 > .pp__card-item > .pp__card-thumb,
+  #Rnking__No3 > .pp__card-item > .pp__card-thumb,
+  #Rnking__No4 > .pp__card-item > .pp__card-thumb {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  #Rnking__No2 > .pp__card-item > .pp__card-thumb,
+  #Rnking__No3 > .pp__card-item > .pp__card-thumb,
+  #Rnking__No4 > .pp__card-item > .pp__card-thumb {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #Rnking__No2 > .pp__card-item > .pp__card-thumb,
+  #Rnking__No3 > .pp__card-item > .pp__card-thumb,
+  #Rnking__No4 > .pp__card-item > .pp__card-thumb {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+#Rnking__No2 > .pp__card-item > .pp__card-thumb img,
+#Rnking__No3 > .pp__card-item > .pp__card-thumb img,
+#Rnking__No4 > .pp__card-item > .pp__card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: inherit;
+}
+
+/* latest post
+---------------------------------------------------------------------------*/
+.lp__cards-wrapper {
+  margin-bottom: 72px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media screen and (max-width: 1024px) {
+  .lp__cards-wrapper {
     grid-template-columns: repeat(2, 1fr);
-    margin: 20px auto 0 auto;
-    padding: 0 20px;
+    gap: 24px;
   }
-  .card.item1 {
-    grid-row: 1/1;
-    grid-column: 1/1;
+}
+@media screen and (max-width: 768px) {
+  .lp__cards-wrapper {
+    grid-template-columns: 1fr;
+    padding: 0 24px; /* 左右余白を確保するため */
   }
 }
 
-@media screen and (min-width: 769px) {
-  .card.item1 {
-    grid-row: 1/1;
-    grid-column: 1/4;
-  }
+.lp__card {
+  display: flex;
+  flex-direction: column;
 }
 
-/* @media screen and (max-width: 768px) {
-    .populer-post__card {
-        grid-template-columns: 1fr;
-    }
-} */
+.lp__card-item {
+  border-radius: 16px;
+  background-color: var(--main_white);
+}
+
+.lp__card-thumb {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.lp__card-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 8/5;
+  transition: transform 0.5s ease;
+  border-radius: 16px;
+}
+
+.lp__card:hover .card__title,
+.pp__card:hover .card__title {
+  color: var(--main_deap-red);
+}
+
+.lp__card:hover .lp__card-thumb img,
+.pp__card:hover .pp__card-thumb img {
+  transform: scale(1.1);
+}
