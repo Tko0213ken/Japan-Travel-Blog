@@ -25,6 +25,26 @@ closeElements.forEach((element) => {
   });
 });
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   const ppNo1Element = document.querySelector("#base-No1hight");
+//   const ppNo1Hight = ppNo1Element.getBoundingClientRect().height;
+//   const rowGap = 16;
+//   const ppNo2to4 = ppNo1Hight - rowGap * 2;
+//   document.documentElement.style.setProperty("--No1-height", `${ppNo2to4}px`);
+//   console.log(`No1:${ppNo1Hight}, No2~4:${ppNo2to4} ,割3:${ppNo2to4 / 3}`);
+// });
+
+function updateHeights() {
+  const ppNo1Element = document.querySelector("#base-imgHight");
+  const ppNo1Hight = ppNo1Element.getBoundingClientRect().height;
+  const rowGap = 0;
+  const ppNo2to4 = ppNo1Hight - rowGap * 2;
+  document.documentElement.style.setProperty("--img-height", `${ppNo2to4}px`);
+  console.log(`No1の高さ: ${ppNo1Hight}, No2~4の高さ: ${ppNo2to4}`);
+}
+document.addEventListener("DOMContentLoaded", updateHeights);
+window.addEventListener("resize", updateHeights);
+
 //   // スクロール前のスクロール位置を保持する変数
 // let lastScrollPosition = window.scrollY;
 // // 現在のスクロール位置を保持する変数
