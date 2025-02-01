@@ -106,19 +106,21 @@ body {
   }
 
   .gnav {
-    display: none;
-    position: absolute;
-    left: 0;
+    position: fixed;
+    right: 0;
     top: 60px;
-    width: 100%;
+    width: 45%;
     height: calc(100vh - 50px);
-    background: #fff;
+    background: var(--main_white);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
   }
   .gnav._open {
-    display: block;
-    position: fixed;
+    transform: translateX(0);
   }
   .gnav__list {
     width: 100%;
@@ -136,6 +138,27 @@ body {
   .gnav__link--current {
     padding-left: 15px;
     border-left: 5px solid var(--main_deap-red);
+  }
+  .gnav-overlay {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 0;
+  }
+
+  .gnav-overlay._open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  body.no-scroll {
+    overflow: hidden;
   }
 }
 
@@ -314,6 +337,46 @@ body {
   color: var(--main_deap-red);
 }
 
+@media screen and (max-width: 1024px) {
+  .dropdown {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    margin-top: 0;
+    left: 0;
+    transform: none;
+    background: var(--sub_gray2);
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .dropdown__item {
+    padding: 12px 20px;
+  }
+
+  .dropdown._open {
+    max-height: 300px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .gnav__link--has-dropdown {
+    cursor: pointer;
+  }
+
+  .dropdown::before {
+    display: none;
+  }
+
+  .dropdown__txt {
+    margin-left: 1em;
+  }
+}
+
 /* gnav__link _current
 ---------------------------------------------------------------------------*/
 @media screen and (min-width: 1025px) {
@@ -328,7 +391,7 @@ body {
   .gnav__link--current::after {
     content: "";
     position: absolute;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%);
     bottom: -6px;
     width: 50%;
@@ -604,7 +667,6 @@ footer {
   color: var(--main_deap-red);
 }
 
-/* ソーシャルアイコンとコピーライト */
 .footer__social {
   display: flex;
   flex-direction: column;

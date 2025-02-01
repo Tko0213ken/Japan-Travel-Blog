@@ -314,7 +314,6 @@
   .four-seasons__card-wrapper {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
-    padding: 0 24px;
   }
 }
 
@@ -350,7 +349,6 @@
     display: grid;
     grid-template: repeat(4, 1fr) / 1fr;
     column-gap: 0;
-    padding: 0 24px;
     row-gap: 16px;
     grid-template-areas:
       "No1"
@@ -492,7 +490,6 @@
 @media screen and (max-width: 768px) {
   .lp__cards-wrapper {
     grid-template-columns: 1fr;
-    padding: 0 24px; /* 左右余白を確保するため */
   }
 }
 
