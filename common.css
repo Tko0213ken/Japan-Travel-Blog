@@ -584,7 +584,7 @@ body {
   right: 1.4rem;
 }
 
-@media (hover: none) {
+/* @media (hover: none) {
   .button a:active {
     background: var(--main_white);
     color: var(--main_deap-red);
@@ -593,6 +593,20 @@ body {
   .button a:active:after {
     right: 1.4rem;
   }
+} */
+
+.button a:hover,
+.button a:active,
+.button a:focus {
+  background: var(--main_white);
+  color: var(--main_deap-red);
+  border: 1px solid var(--main_deap-red);
+}
+
+.button a:hover:after,
+.button a:active:after,
+.button a:focus:after {
+  right: 1.4rem;
 }
 
 @media screen and (max-width: 768px) {
