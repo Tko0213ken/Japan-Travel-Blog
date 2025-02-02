@@ -258,6 +258,13 @@
   transition: transform 0.8s ease;
 }
 
+.four-seasons__description {
+  text-align: center;
+  text-wrap: balance;
+  max-width: 100%;
+  margin: 0 auto 20px;
+}
+
 .four-seasons__thumb {
   width: 100%;
 }
@@ -272,6 +279,12 @@
 
 .four-seasons__card:hover .four-seasons__thumb img {
   transform: scale(1.05);
+}
+
+@media (hover: none) {
+  .four-seasons__card:active .four-seasons__thumb img {
+    transform: scale(1.05);
+  }
 }
 
 .four-seasons__title {
@@ -312,6 +325,7 @@
 }
 @media screen and (max-width: 768px) {
   .four-seasons__card-wrapper {
+    gap: 8px;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
   }
@@ -321,6 +335,7 @@
 ---------------------------------------------------------------------------*/
 .pp__cards-wrapper {
   display: grid;
+  margin-top: 16px;
   margin-bottom: 72px;
   grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   row-gap: 24px;
@@ -347,6 +362,8 @@
 @media screen and (max-width: 768px) {
   .pp__cards-wrapper {
     display: grid;
+    margin-top: 0;
+    margin-bottom: 32px;
     grid-template: repeat(4, 1fr) / 1fr;
     column-gap: 0;
     row-gap: 16px;
@@ -392,8 +409,8 @@
   #Rnking__No1 > .pp__card-item > .pp__card-thumb {
     aspect-ratio: 1 / 1;
     flex-shrink: 0;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -445,7 +462,17 @@
   }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 520px) {
+  #Rnking__No1 > .pp__card-item > .pp__card-thumb,
+  #Rnking__No2 > .pp__card-item > .pp__card-thumb,
+  #Rnking__No3 > .pp__card-item > .pp__card-thumb,
+  #Rnking__No4 > .pp__card-item > .pp__card-thumb {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* @media screen and (max-width: 950px) {
   #Rnking__No2 > .pp__card-item > .pp__card-thumb,
   #Rnking__No3 > .pp__card-item > .pp__card-thumb,
   #Rnking__No4 > .pp__card-item > .pp__card-thumb {
@@ -457,10 +484,10 @@
   #Rnking__No2 > .pp__card-item > .pp__card-thumb,
   #Rnking__No3 > .pp__card-item > .pp__card-thumb,
   #Rnking__No4 > .pp__card-item > .pp__card-thumb {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
   }
-}
+} */
 
 #Rnking__No2 > .pp__card-item > .pp__card-thumb img,
 #Rnking__No3 > .pp__card-item > .pp__card-thumb img,
@@ -490,6 +517,7 @@
 @media screen and (max-width: 768px) {
   .lp__cards-wrapper {
     grid-template-columns: 1fr;
+    margin-bottom: 32px;
   }
 }
 
@@ -526,4 +554,16 @@
 .lp__card:hover .lp__card-thumb img,
 .pp__card:hover .pp__card-thumb img {
   transform: scale(1.1);
+}
+
+@media (hover: none) {
+  .lp__card:active .card__title,
+  .pp__card:active .card__title {
+    color: var(--main_deap-red);
+  }
+
+  .lp__card:active .lp__card-thumb img,
+  .pp__card:active .pp__card-thumb img {
+    transform: scale(1.1);
+  }
 }
